@@ -1,0 +1,40 @@
+/* CHASTIDY VASCONEZ COMP20 ASSGN5 */
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Joe's Hotdogs</title>
+</head>
+
+<body>
+    <h1>Welcome to Joe's Hotdogs</h1>
+    <script language="javascript">
+        document.write("<h2>Your Order</h2>");
+
+        x = prompt("How many hotdogs?");
+        y = prompt("How many fries?");
+        z = prompt("How many drinks?");
+
+        document.write("#Hotdogs: " + x + "  at $3.25 is $" + (3.25 * x).toFixed(2)+"<br/>");
+
+        document.write("#Fries: " + y + "  at $2.00 is $" + (2 * y).toFixed(2) + "<br/>");
+
+        document.write("#Sodas: " + z + "  at $1.50 is $" + (1.50 * z).toFixed(2) + "<br/>");
+
+        var subtotal;
+        subtotal = ((1.50 * z)+(2 * y)+(3.25 * x));
+
+        document.write(subtotal >= 20? "You qualified for our 10% discount.<br/>":" <br/>");
+
+        n = (subtotal >= 20? subtotal*0.90:subtotal);
+        document.write("Subtotal: $" + n.toFixed(2)+"<br/>");
+
+        document.write("Meals Tax: $" + (n*0.0625).toFixed(2) + "<br/>");
+
+        document.write("Total: $" + (n+n*0.0625).toFixed(2)+"<br/>");
+
+    </script>
+
+</body>
+
+</html>
