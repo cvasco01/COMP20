@@ -30,7 +30,7 @@
            //Lucky Ball winning number
            var LB_NUM = RAND_NUM(1, 18);
            document.write(LB_NUM);
-////////////////////////////////////////////////////////////////////
+
             function Payout_Calculator(){
                 var ENTERED_NUMS = document.getElementById('ent_nums').value;
                 var LB_ENTERED_NUM = document.getElementById('LB_ent_num').value;
@@ -41,7 +41,7 @@
 
                 var count = 0;
                 for (i = 0; i < WINNING_NUMS.length; i++) {
-                    for (j = 0; j < ENTERED_NUMS.length; j++)
+                    for (j = 0; j < ENTERED_NUMS.length; j++) {
                         if (WINNING_NUMS[i] == ENTERED_NUMS[j]){
                             count +=1;
                             break;
