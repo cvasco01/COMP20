@@ -16,7 +16,11 @@
             //array of the 5 winning random numbers
             var WINNING_NUMS = [RAND_NUM(01, 48), RAND_NUM(01, 48), RAND_NUM(01, 48), RAND_NUM(01, 48), RAND_NUM(01, 48)];
 
-            console.log(WINNING_NUMS);
+            for (var i = 0; i < WINNING_NUMS.length; i++) {
+                  document.write(WINNING_NUMS[i]+" ");
+           };
+              document.write("<br>");
+
 
             WINNING_NUMS = WINNING_NUMS.sort(function(a,b){return a-b});
             console.log(WINNING_NUMS);
@@ -26,11 +30,12 @@
                   document.write(WINNING_NUMS[i]+" ");
            };
            document.write("<br>");
+           document.write("<br>");
 
            //Lucky Ball winning number
            var LB_NUM = RAND_NUM(1, 18);
            document.write(LB_NUM);
-
+////////////////////////////////////////////////////////////////////
             function Payout_Calculator(){
                 var ENTERED_NUMS = document.getElementById('ent_nums').value;
                 var LB_ENTERED_NUM = document.getElementById('LB_ent_num').value;
