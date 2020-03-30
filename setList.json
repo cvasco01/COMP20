@@ -1,0 +1,101 @@
+[
+    {
+        "title" : "Say So",
+        "artist" : {
+            "main": "Doja Cat",
+            "featured": null
+        },
+        "genre" : "R&B",
+        "year": "2019"
+    },
+
+    {
+        "title" : "Juicy",
+        "artist" : {
+            "main" : "Doja Cat",
+            "featured" : "Tyga"
+        },
+        "genre" : "R&B",
+        "year" : "2019"
+    },
+
+    {
+        "title" : "Si Veo a Tu Mamá",
+        "artist" : {
+            "main": "Bad Bunny",
+            "featured": null
+        },
+        "genre" : "Reggaeton",
+        "year" : "2020"
+    },
+
+    {
+        "title" : "Loco Contigo",
+        "artist" : {
+            "main" : "DJ Snake",
+            "featured" : ["J Balvin", "Tyga"]
+        },
+        "genre" : "Reggaeton",
+        "year released" : "2019"
+    },
+
+    {
+        "title" : "Bellacoso",
+        "artist" : {
+            "main" : ["Residente","Bad Bunny"],
+            "featured" : null
+        },
+        "genre" : "Reggaeton",
+        "year released" : "2019"
+    },
+
+    {
+        "title" : "Self Love",
+        "artist" : {
+            "main" : "Dreamville",
+            "featured" : ["Ari Lennox","Bas","Baby Rose"]
+        },
+        "genre": "R&B",
+        "year released": "2019"
+    },
+
+    {
+        "title" : "Play Too Much",
+        "artist" : {
+            "main" : "Kyle Dion",
+            "featured" : ["UMI","Duckwrth"]
+        },
+        "genre": "R&B",
+        "year released": "2020"
+    },
+
+    {
+        "title" : "Wanna Get To Know You",
+        "artist" : {
+            "main" : "G-Unit",
+            "featured" : "Joe"
+        },
+        "genre": "Hip-Hop",
+        "year released": "2003"
+    },
+
+    {
+        "title" : "Got Your Money",
+        "artist" : {
+            "main" : "Ol' Dirty Bastard",
+            "featured" : "Kelis"
+        },
+        "genre": "Hip-Hop",
+        "year released": "1999"
+    },
+
+    {
+        "title" : "Rapp Snitch Knishes",
+        "artist" : {
+            "main" : "MF DOOM",
+            "featured" : "Mr.Fantastik"
+        },
+        "genre": "Hip-Hop",
+        "year released": "2004"
+    },
+]
