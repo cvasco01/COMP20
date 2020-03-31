@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chastidy's Set List</title>
+        <style type="text/css">
+
+        .flex-container{
+            display: flex;
+            background-color:white;
+            align-items: stretch;
+            flex-direction: row;
+
+        }
+        .flex-container div{
+            background-color: #E4DDED;
+            width:30%;
+            margin: 10px;
+            padding: 20px 30px 30px 30px;
+            overflow: hidden;
+
+        }
+        body{
+            font-family: sans-serif;
+        }
+        td{
+            border: 5px solid black;
+            padding:10px;
+            text-align: center;
+        }
+
+        </style>
+
+
+        <script language="javascript">
+
+            SetList = [
+               {
+                   "title" : "Say So",
+                   "artist" : {
+                       "main": "Doja Cat",
+                       "featured": null
+                   },
+                   "genre" : ["Pop", " R&B"],
+                   "year": "2019"
+                },
+                {
+                   "title" : "Juicy",
+                   "artist" : {
+                       "main" : "Doja Cat",
+                       "featured" : "Tyga"
+                   },
+                   "genre" : ["Pop", " R&B"],
+                   "year" : "2019"
+               },
+               {
+                   "title" : "Si Veo a Tu Mamá",
+                   "artist" : {
+                       "main": "Bad Bunny",
+                       "featured": null
+                   },
+                   "genre" : "Reggaeton",
+                   "year" : "2020"
+               },
+               {
+                   "title" : "Loco Contigo",
+                   "artist" : {
+                       "main" : "DJ Snake",
+                       "featured" : ["J Balvin", " Tyga"]
+                   },
+                   "genre" : "Reggaeton",
+                   "year" : "2019"
+               },
+               {
+                   "title" : "Bellacoso",
+                   "artist" : {
+                       "main" : ["Residente"," Bad Bunny"],
+                       "featured" : null
+                   },
+                   "genre" : "Reggaeton",
+                   "year" : "2019"
+               },
+               {
+                   "title" : "Self Love",
+                   "artist" : {
+                       "main" : "Dreamville",
+                       "featured" : ["Ari Lennox"," Bas"," Baby Rose"]
+                   },
+                   "genre": "R&B",
+                   "year": "2019"
+               },
+               {
+                   "title" : "Play Too Much",
+                   "artist" : {
+                       "main" : "Kyle Dion",
+                       "featured" : ["UMI"," Duckwrth"]
+                   },
+                   "genre": "R&B",
+                   "year": "2020"
+               },
+               {
+                   "title" : "Wanna Get To Know You",
+                   "artist" : {
+                       "main" : "G-Unit",
+                       "featured" : "Joe"
+                   },
+                   "genre": "Hip-Hop",
+                   "year": "2003"
+               },
+               {
+                   "title" : "Got Your Money",
+                   "artist" : {
+                       "main" : "Ol' Dirty Bastard",
+                       "featured" : "Kelis"
+                   },
+                   "genre": "Hip-Hop",
+                   "year": "1999"
+               },
+               {
+                   "title" : "Rapp Snitch Knishes",
+                   "artist" : {
+                       "main" : "MF DOOM",
+                       "featured" : "Mr.Fantastik"
+                   },
+                   "genre": "Hip-Hop",
+                   "year": "2004"
+               }
+            ]
+        </script>
+    </head>
+
+
+    <body>
+        <div class="flex-container">
+
+
+    <div style="order: 2">
+        <table id="SetListTable" style="text-align:center">
+        </table>
+    </div>
+
+    <div>
+
+    <script language="javascript">
+        //DISPLAYS ALL JSON DATA AS STRING
+        strSetList = JSON.stringify(SetList);
+    //    console.log(strSetList);
+        document.write(strSetList + "<br>");
+
+        //DESERIALIZES JSON STRING
+        jsonSetList = JSON.parse(strSetList);
+
+        //POPULATES TABLE ROWS & DATA
+        output = '';
+        for (var i = 0; i < jsonSetList.length; i++){
+            output += '<tr><td>' + jsonSetList[i].title + "<br>"
+            + "Artist: " + jsonSetList[i].artist.main + "<br>";
+            if (jsonSetList[i].artist.featured != null){
+                output += "Ft. " + jsonSetList[i].artist.featured + "<br>";
+            };
+            output += "Genre: " + jsonSetList[i].genre + "<br>"
+                    +"Released " + jsonSetList[i].year + "<br>"
+                    + '</tr></td>'
+        }
+        //console.log(output);
+        document.getElementById('SetListTable').innerHTML =
+                "<tr><th>CHASTIDY's SET LIST</th></tr>" + output;
+         </script>
+
+     </div>
+    </br>
+
+<!-- ====================================================================== -->
+    <div style="order: 3">
+
+        <form id= "SetListForm">
+            <label style="font-weight:bold">Select a genre</label>
+            <select id = "selectGenre">
+                <option>R&B</option>
+                <option>Hip-Hop</option>
+                <option>Reggaeton</option>
+                <option>Pop</option>
+            </select>
+
+            <button type="button" onclick="filterFunction()">Filter Genre</button>
+        </form>
+
+        <p id = "displayFilter"></p>
+
+        <script language="javascript">
+
+        function filterFunction(){
+        var genre = document.getElementById("selectGenre");
+        var result = genre.options[genre.selectedIndex].text;
+
+        if (result == "R&B"){
+            document.getElementById("displayFilter").innerHTML =
+            "Say So" + "<br>" + "Juicy" + "<br>" + "Self Love" +
+             "<br>" + "Play Too Much";
+        };
+        if (result == "Reggaeton"){
+            document.getElementById("displayFilter").innerHTML =
+            "Si Veo a Tu Mamá" + "<br>" + "Loco Contigo" + "<br>" + "Bellacoso";
+        };
+        if (result == "Hip-Hop"){
+            document.getElementById("displayFilter").innerHTML =
+            "Wanna Get To Know You" + "<br>" + "Got Your Money" + "<br>" + "Rapp Snitch Knishes";
+        };
+        if (result == "Pop"){
+            document.getElementById("displayFilter").innerHTML =
+            "Say So" + "<br>" + "Juicy";
+        };
+        }
+        </script>
+    </div>
+
+</div>
+    </body>
+</html>
