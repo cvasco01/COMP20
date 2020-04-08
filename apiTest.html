@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>API test</title>
+        <style type="text/css">
+        .flex-container{
+            display: flex;
+            background-color:white;
+            align-items: center;
+            flex-direction: column;
+        }
+        .flex-container div{
+            background-color: #D8F4C6;
+            width:60%;
+            margin: 10px;
+            padding: 20px 40px 40px 30px;
+            overflow: hidden;
+        }
+
+        </style>
+
+
+        <script language="javascript">
+            function getExchange(){
+                request = new XMLHttpRequest();
+                console.log("hi");
+
+                request.open('GET', "http://api.currencylayer.com/live?access_key=1d71226204ddf4d6e0d3c36e80de58ef&currencies=USD,LAK,EUR,BTC,MXN&format=1", true);
+                request.send();
+
+                request.onreadystatechange =  function(){
+                    console.log("3 - readystatechange event fired.");
+
+                    if (request.readyState == 4 && request.status == 200) {
+
+                        result = request.responseText;
+                        alert(result);
+                        data = JSON.parse(result);
+                        console.log(data);
+
+                        document.getElementById("USD").innerHTML = "US Dollar: " + data.quotes.USDUSD;
+                        document.getElementById("LaoKip").innerHTML = "Lao Kip: " + data.quotes.USDLAK;
+                        document.getElementById("MXNpeso").innerHTML = "Mexican Peso: " + data.quotes.USDMXN;
+                        document.getElementById("Euro").innerHTML = "Euro: " + data.quotes.USDEUR;
+                        document.getElementById("BTC").innerHTML = "Bit Coin: " + data.quotes.USDBTC;
+
+
+                    }else if (request.readyState == 4 && request.status != 200) {
+
+    					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+    				}else if (request.readyState == 3) {
+
+    					document.getElementById("data").innerHTML = "Too soon! Try again";
+
+    				}
+            }
+        }
+
+
+        </script>
+    </head>
+
+    <body onload="getExchange()">
+        <div class="flex-container">
+
+            <div>
+
+            <h2>Currency Exchange Quotes</h2>
+            <p id="USD">loading exchange rate...</p>
+            <p id="LaoKip">loading exchange rate...</p>
+            <p id="MXNpeso">loading exchange rate...</p>
+            <p id="Euro">loading exchange rate...</p>
+            <p id="BTC">loading exchange rate...</p>
+
+            </div>
+
+            <div>
+                <p> I chose to use an API that provides real time data of differnet exchange rates. I found this API on <a href="https://currencylayer.com"> currencylayer.com</a>. I was able to select which exchange rates I wanted to pull for my API request. I selected four different exchange rates converted from 1 USD dollar. This API would be useful in an app for frequent travellers. Travellers would be able to easily find real time exchange rates for the different countries they are visiting. I would also use this API on an online shopping application. With this API the global shopping app could convert its prices based on the currency the user selects in the begining.</p>
+            </div>
+
+
+
+
+        </div>
+    </body>
+</html>
