@@ -27,7 +27,7 @@
                 console.log("hi");
 
                 request.open('GET', "http://api.currencylayer.com/live?access_key=1d71226204ddf4d6e0d3c36e80de58ef&currencies=USD,LAK,EUR,BTC,MXN&format=1", true);
-                request.send();
+                
 
                 request.onreadystatechange =  function(){
                     console.log("3 - readystatechange event fired.");
