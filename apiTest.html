@@ -26,7 +26,7 @@
                 request = new XMLHttpRequest();
                 console.log("hi");
 
-                request.open('GET', "https://api.currencylayer.com/live?access_key=1d71226204ddf4d6e0d3c36e80de58ef&currencies=USD,LAK,EUR,BTC,MXN&format=1", true);
+                request.open('GET', "http://api.currencylayer.com/live?access_key=1d71226204ddf4d6e0d3c36e80de58ef&currencies=USD,LAK,EUR,BTC,MXN&format=1", true);
                 request.send();
 
                 request.onreadystatechange =  function(){
@@ -79,6 +79,7 @@
             <div>
                 <p> I chose to use an API that provides real time data of differnet exchange rates. I found this API on <a href="https://currencylayer.com"> currencylayer.com</a>. I was able to select which exchange rates I wanted to pull for my API request. I selected four different exchange rates converted from 1 USD dollar. This API would be useful in an app for frequent travellers. Travellers would be able to easily find real time exchange rates for the different countries they are visiting. I would also use this API on an online shopping application. With this API the global shopping app could convert its prices based on the currency the user selects in the begining.</p>
             </div>
+
         </div>
     </body>
 </html>
