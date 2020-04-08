@@ -48,11 +48,11 @@
 
                     }else if (request.readyState == 4 && request.status != 200) {
 
-    					document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+    					document.getElementById("USD").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
 
     				}else if (request.readyState == 3) {
 
-    					document.getElementById("data").innerHTML = "Too soon! Try again";
+    					document.getElementById("USD").innerHTML = "Too soon! Try again";
 
     				}
             }
@@ -69,20 +69,16 @@
 
             <h2>Currency Exchange Quotes</h2>
             <p id="USD">loading exchange rate...</p>
-            <p id="LaoKip">loading exchange rate...</p>
-            <p id="MXNpeso">loading exchange rate...</p>
-            <p id="Euro">loading exchange rate...</p>
-            <p id="BTC">loading exchange rate...</p>
+            <p id="LaoKip"></p>
+            <p id="MXNpeso"></p>
+            <p id="Euro"></p>
+            <p id="BTC"></p>
 
             </div>
 
             <div>
                 <p> I chose to use an API that provides real time data of differnet exchange rates. I found this API on <a href="https://currencylayer.com"> currencylayer.com</a>. I was able to select which exchange rates I wanted to pull for my API request. I selected four different exchange rates converted from 1 USD dollar. This API would be useful in an app for frequent travellers. Travellers would be able to easily find real time exchange rates for the different countries they are visiting. I would also use this API on an online shopping application. With this API the global shopping app could convert its prices based on the currency the user selects in the begining.</p>
             </div>
-
-
-
-
         </div>
     </body>
 </html>
